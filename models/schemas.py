@@ -23,3 +23,17 @@ class FourCriteriaEval(BaseModel):
 # 심화 질문
 class DeepQuestion(BaseModel):
     question: str
+
+class QSItem(BaseModel):
+    direction: str = Field(..., description="질문 방향")
+    examples: List[str] = Field(..., description="예시 질문 목록(2~3개)")
+
+class QSOutput(BaseModel):
+    experience: QSItem
+    motivation: QSItem
+    logic: QSItem
+
+class QSMultiOutput(BaseModel):  # 세 명의 면접관
+    potential: QSOutput       # A 면접관 (잠재력)
+    organization: QSOutput    # B 면접관 (조직)
+    job: QSOutput             # C 면접관 (직무)
