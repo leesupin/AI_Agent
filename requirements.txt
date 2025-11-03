@@ -1,0 +1,9 @@
+langchain==0.3.24
+langgraph
+typing
+wikipedia
+chromadb
+google-search-results
+pymupdf
+python-docx
+gradio
